@@ -465,12 +465,11 @@ status.command({
 
         return {
             event: "request",
-            params: [params["bot-db"]["contact"]["address"], val],
             request: {
                 command: "send",
-                params: {
-                    recipient: params["bot-db"]["contact"]["address"],
-                    amount: val
+                prefill: [params["bot-db"]["contact"]["name"], val],
+                "bot-db": {
+                    contact: params["bot-db"]["contact"]
                 }
             }
         };
