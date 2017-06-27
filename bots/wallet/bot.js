@@ -467,8 +467,12 @@ status.command({
             event: "request",
             request: {
                 command: "send",
+                params: {
+                    recipient: params["bot-db"]["contact"]["name"],
+                    amount: val
+                },
                 prefill: [params["bot-db"]["contact"]["name"], val],
-                "bot-db": {
+                prefillBotDb: {
                     contact: params["bot-db"]["contact"]
                 }
             }
